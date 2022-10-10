@@ -1,0 +1,7 @@
+.git/
+.idea/
+desktop.ini
+
+/dataset/*
+/models/seat/*
+!/models/seat/bohr_*
