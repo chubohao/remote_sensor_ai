@@ -14,5 +14,10 @@ desktop.ini
 */History/*
 
 # software edge
-/software/dataset/*
-/software/edge/models/*
+/software/edge/dataset/*
+/software/edge/models/seat/*
+!/software/edge/models/seat/bohr_*
+
+# software server
+/software/server/dataset/
+/software/server/models/

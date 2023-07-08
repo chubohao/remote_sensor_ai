@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=IIC_SDA Pin=J-3
+Removed Pin From Net: NetName=IIC_SCL Pin=J-4
+Added Pin To Net: NetName=IIC_SCL Pin=J-3
+Added Pin To Net: NetName=IIC_SDA Pin=J-4

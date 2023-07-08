@@ -1,0 +1,42 @@
+Removed Pin From Net: NetName=IIC_SCL Pin=J-3
+Removed Pin From Net: NetName=IIC_SCL Pin=J-4
+Removed Pin From Net: NetName=Mic_SD Pin=J-6
+Removed Pin From Net: NetName=IIC_SCL Pin=R3-1
+Removed Pin From Net: NetName=IIC_SCL Pin=R8-1
+Removed Pin From Net: NetName=IIC_SCL Pin=R9-1
+Removed Pin From Net: NetName=IIC_SCL Pin=R12-2
+Removed Pin From Net: NetName=IIC_SCL Pin=R13-2
+Removed Pin From Net: NetName=IIC_SCL Pin=R21-1
+Removed Pin From Net: NetName=IIC_SCL Pin=R22-1
+Removed Pin From Net: NetName=IIC_SCL Pin=U2-23
+Removed Pin From Net: NetName=IIC_SCL Pin=U2-24
+Removed Pin From Net: NetName=IIC_SCL Pin=U3-3
+Removed Pin From Net: NetName=IIC_SCL Pin=U3-4
+Removed Pin From Net: NetName=IIC_SCL Pin=U5-2
+Removed Pin From Net: NetName=IIC_SCL Pin=U5-3
+Change Net Name : Old Net Name=IIC_SCL New Net Name=VCC
+Change Net Name : Old Net Name=Mic_SD New Net Name=GND
+Added Pin To Net: NetName=IIC_SCL Pin=J-4
+Added Pin To Net: NetName=IIC_SCL Pin=R6-2
+Added Pin To Net: NetName=IIC_SCL Pin=R9-1
+Added Pin To Net: NetName=IIC_SCL Pin=R12-2
+Added Pin To Net: NetName=IIC_SCL Pin=R21-1
+Added Pin To Net: NetName=IIC_SCL Pin=U1-10
+Added Pin To Net: NetName=IIC_SCL Pin=U2-23
+Added Pin To Net: NetName=IIC_SCL Pin=U3-4
+Added Pin To Net: NetName=IIC_SCL Pin=U5-3
+Added Net: Name=IIC_SCL
+Added Pin To Net: NetName=IIC_SDA Pin=J-3
+Added Pin To Net: NetName=IIC_SDA Pin=R4-2
+Added Pin To Net: NetName=IIC_SDA Pin=R8-1
+Added Pin To Net: NetName=IIC_SDA Pin=R13-2
+Added Pin To Net: NetName=IIC_SDA Pin=R22-1
+Added Pin To Net: NetName=IIC_SDA Pin=U1-9
+Added Pin To Net: NetName=IIC_SDA Pin=U2-24
+Added Pin To Net: NetName=IIC_SDA Pin=U3-3
+Added Pin To Net: NetName=IIC_SDA Pin=U5-2
+Added Net: Name=IIC_SDA
+Added Pin To Net: NetName=Mic_SD Pin=J-6
+Added Pin To Net: NetName=Mic_SD Pin=R19-2
+Added Pin To Net: NetName=Mic_SD Pin=U4-2
+Added Net: Name=Mic_SD

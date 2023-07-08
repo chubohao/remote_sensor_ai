@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=Mic_SCK Pin=J-6
+Removed Pin From Net: NetName=Mic_WS Pin=J-7
+Added Pin To Net: NetName=Mic_WS Pin=J-6
+Added Pin To Net: NetName=Mic_SCK Pin=J-7

@@ -1,0 +1,6 @@
+Change Component Comment : Designator=C11 Old Comment=100nF  New Comment=100nF
+Added Pin To Net: NetName=VCC Pin=R3-1
+Added Member To Class: ClassName=supersensor Member=Component C10 100nF
+Added Member To Class: ClassName=supersensor Member=Component R15 10KO
+Added Member To Class: ClassName=supersensor Member=Component R16 10KO
+Added Room: Name=supersensor

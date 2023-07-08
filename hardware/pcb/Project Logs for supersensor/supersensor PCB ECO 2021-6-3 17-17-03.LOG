@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=Mic_SCK Pin=J-5
+Removed Pin From Net: NetName=Mic_SD Pin=J-6
+Added Pin To Net: NetName=Mic_SD Pin=J-5
+Added Pin To Net: NetName=Mic_SCK Pin=J-6
+Added Member To Class: ClassName=supersensor Member=Component C11 100nF

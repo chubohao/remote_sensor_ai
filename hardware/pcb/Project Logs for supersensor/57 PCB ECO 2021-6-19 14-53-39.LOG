@@ -1,0 +1,17 @@
+Added Component: Designator=U6(PIN20)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/RASPBERRY%20PI%203%20MODEL%20B+/Raspberry%20Pi/view-part/4299836/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "1690-1025-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Raspberry Pi"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "RASPBERRY PI 3 MODEL B+"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "Raspberry Pi"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/RASPBERRY%20PI%203%20MODEL%20B+/Raspberry%20Pi/view-part/4299836/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=IIC_SDA Pin=U6-3
+Added Pin To Net: NetName=IIC_SCL Pin=U6-5
+Added Pin To Net: NetName=GND Pin=U6-9
+Added Pin To Net: NetName=Mic_SCK Pin=U6-12
+Added Pin To Net: NetName=3.3V Pin=U6-17
+Added Pin To Net: NetName=GND Pin=U6-25
+Added Pin To Net: NetName=Mic_WS Pin=U6-35
+Added Pin To Net: NetName=Mic_SD Pin=U6-38
+Added Member To Class: ClassName=Supersensor Member=Component U6 PIN20
