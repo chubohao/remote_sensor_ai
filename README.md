@@ -84,14 +84,6 @@ Transmitting data in an environment without WiFi has always been a difficult pro
         <td>The MPU-9250 is the company’s second generation 9-axis Motion Processing Unit™ for smartphones, tablets, wearable sensors, and other consumer markets.</td>
     </tr>
     <tr>
-        <td>Color</td>
-        <td><a href="https://www.sparkfun.com/products/12829">ISL29125</a></td> 
-        <td>I2C</td> 
-        <td>20</td>
-        <td>1</td>
-        <td>The MPU-9250 is the company’s second generation 9-axis Motion Processing Unit™ for smartphones, tablets, wearable sensors, and other consumer markets.</td>
-    </tr>
-    <tr>
         <td>Camera</td>
         <td><a href="https://www.raspberrypi.com/products/camera-module-v2/">IMX219</a></td> 
         <td>CSI</td> 
@@ -131,6 +123,11 @@ Install some common software. Some software requires your confirmation, so type 
 
 - `sudo apt install git vim i2c-tools python3-pip portaudio19-dev libsndfile1`
 
+
+Downlaod source code.
+
+- `sudo git clone https://github.com/chubohao/remote_sensor_ai.git`
+
 Install some python libraries.
 - `sudo pip3 install smbus sparkfun-qwiic serial pyaudio matplotlib librosa tflite-runtime adafruit-python-shell`
 
@@ -143,22 +140,6 @@ Install some python libraries.
         <td><b>Frequency</b></td> 
         <td><b>Channel</b></td>
         <td><b>Description</b></td>
-    </tr>
-    <tr>
-        <td><a href="https://coral.ai/products/accelerator-module">Coral</a></td>
-        <td>G313</td> 
-        <td>USB3.0</td> 
-        <td>4TOPS</td>
-        <td>1</td>
-        <td>The Accelerator Module is a surface-mounted module that includes the Edge TPU and its own power control. It provides accelerated inferencing for TensorFlow Lite models on your custom PCB hardware.</td>
-    </tr>
-    <tr>
-        <td>CM4</td>
-        <td>ARM</td> 
-        <td>/</td> 
-        <td>Foo</td>
-        <td>Foo</td>
-        <td>/</td>
     </tr>
     <tr>
         <td>Microphone</td>
@@ -201,38 +182,6 @@ Install some python libraries.
         <td>The MPU-9250 is the company’s second generation 9-axis Motion Processing Unit™ for smartphones, tablets, wearable sensors, and other consumer markets.</td>
     </tr>
     <tr>
-        <td>Color</td>
-        <td><a href="https://www.sparkfun.com/products/12829">ISL29125</a></td> 
-        <td>I2C</td> 
-        <td>20</td>
-        <td>1</td>
-        <td>The MPU-9250 is the company’s second generation 9-axis Motion Processing Unit™ for smartphones, tablets, wearable sensors, and other consumer markets.</td>
-    </tr>
-    <tr>
-        <td>ADC</td>
-        <td><a href="https://www.sparkfun.com/products/15334">ADS1015</a></td> 
-        <td>ADC</td> 
-        <td>3.3K</td>
-        <td>1</td>
-        <td>The MPU-9250 is the company’s second generation 9-axis Motion Processing Unit™ for smartphones, tablets, wearable sensors, and other consumer markets.</td>
-    </tr>
-    <tr>
-        <td>PIR</td>
-        <td><a href="https://eu.mouser.com/ProductDetail/Panasonic-Industrial-Devices/AMN21111?qs=mTeSeKeuVA47b9orPGfrSw%3D%3D">AMN2111J</a></td> 
-        <td>ADC</td> 
-        <td>3.3K</td>
-        <td>1</td>
-        <td>The MPU-9250 is the company’s second generation 9-axis Motion Processing Unit™ for smartphones, tablets, wearable sensors, and other consumer markets.</td>
-    </tr>
-    <tr>
-        <td>EMI</td>
-        <td><a href="https://www.mouser.de/ProductDetail/Bourns/RLB0913-104K?qs=Rodu%2FvDoGwLymOumQmWR1A%3D%3D&mgh=1&vip=1&gclid=CjwKCAjwvsqZBhAlEiwAqAHElV2dEPjAkC9ngPHqMGE1YfzbLPp8Bsx_6S_zXgeyLb4fCHtJOefOBRoCmfkQAvD_BwE">100MH</a></td> 
-        <td>ADC</td> 
-        <td>3.3K</td>
-        <td>1</td>
-        <td>The MPU-9250 is the company’s second generation 9-axis Motion Processing Unit™ for smartphones, tablets, wearable sensors, and other consumer markets.</td>
-    </tr>
-    <tr>
         <td>Camera</td>
         <td><a href="https://www.raspberrypi.com/products/camera-module-v2/">IMX219</a></td> 
         <td>CSI</td> 
@@ -245,7 +194,7 @@ Install some python libraries.
 #### **A1. Microphone Driver**
 
 **First**, install INMP441 Driver, execute the following commands sequentially in Terminal.
-1. `cd ~/edge/tools/ && sudo python3 i2smic.py`
+1. `cd ~/remote_sensor_ai/software/edge/tools/ && sudo python3 i2smic.py`
 2. Please type y when prompt `"Auto load module at boot"?`
 3. Please type y when prompt `"REBOOT NOW? [Y/n]"`
 4. Connect it again via ssh.
@@ -254,7 +203,7 @@ Install some python libraries.
 1. `arecord -l`
 - ![CM4 IO Board](/assets/images/edge/arecord.png "CM4 IO Board")
 
-2. `arecord -D plughw:0 -c1 -r 48000 -f S32_LE -t wav -V mono -v file.wav`
+2. `arecord -D plughw:1 -c1 -r 48000 -f S32_LE -t wav -V mono -v file.wav`
 - ![CM4 IO Board](/assets/images/edge/arecord2.png "CM4 IO Board")
 
 3. `rm file.wav`
@@ -344,47 +293,7 @@ It has been opened in the above, no need to open it again. If there is no i2c-1,
 1. `python3 ~/edge/source/drivers/bmeDriver.py`
 - ![BME](/assets/images/edge/bme1.png "BME")
 
-#### **A6. Color**
-
-**First**, Open I2C3 interface of CM4.
-1. `sudo vim /boot/config.txt`
-2. add `dtoverlay=i2c3,pin_4_5=1` below *# uncommet some or all of these to enable the opetional optional hardware interfaces*.
-- ![](/assets/images/edge/i2c3.png)
-3. save it and execut the command `sudo reboot` to reboot the ECSK.
-
-**Second**, Check the status of i2c3 and the device mount on it.
-
-1. `i2cdetect -l` to show all i2c interfaces.
-
-- ![CM4 IO Board](/assets/images/edge/i2c31.png "CM4 IO Board")
-
-2. `i2cdetect -y 3` the show all device mount on i2c3 interface, the **0x44** is the address of ISL29125.
-
-- ![CM4 IO Board](/assets/images/edge/ISL.png "CM4 IO Board")
-
-**Third**, test the driver of ISL29125.
-
-1. `python3 ~/edge/source/drivers/islDriver.py`
-- ![CM4 IO Board](/assets/images/edge/ISL1.png "CM4 IO Board")
-
-
-
-#### **A7. ADC**
-**First**, Open I2C3 interface of CM4.
-
-It has been opened in the above, no need to open it again. If there is no i2c-3, please operate again.
-
-1. `i2cdetect -l` to show all i2c interfaces.`
-- ![CM4 IO Board](/assets/images/edge/i2c31.png "CM4 IO Board")
-
-2. `i2cdetect -y 3` the show all device mount on i2c1 interface, the **0x48** is the address of ADC.
-- ![CM4 IO Board](/assets/images/edge/i2c32.png "CM4 IO Board")
-
-**Second**, Check the status of i2c3 and the device which mounted on it.
-
-*Actually, we added two sensors AMN21111 and 100H Inductors on ADC, but we did not use them in this version. We will extent them in next version.*
-
-#### **A8. Camera**
+#### **A6. Camera**
 **First**, Open CSI1 interface of CM4.
 
 1. `sudo vim /boot/config.txt`
@@ -490,7 +399,20 @@ ALSA lib pcm.c:2660:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
 `sudo cp ~/edge/tools/alsa.conf /usr/share/alsa/`
 
 ## **4G Modules**
+1. `sudo apt install libmbim-utils ppp -y`
+2. `sudo vim /etc/mbim-network.conf`
 
+> APN=internet
+> APN_USER=
+> APN_PASS=
+> APN_AUTH=
+>PROXY=yes
+
+4. `sudo mbim-network /dev/cdc-wdm0 start`
+![Alt text](/assets/images/4G.png)
+
+6. `ifconfig`
+![Alt text](/assets/images/4G1.png)
 
 ## **PCB**
 ![Alt text](/assets/top.png)
