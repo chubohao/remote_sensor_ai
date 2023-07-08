@@ -402,7 +402,7 @@ ALSA lib pcm.c:2660:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline
 1. `sudo apt install libmbim-utils ppp -y`
 2. `sudo vim /etc/mbim-network.conf`
 
-> APN=internet
+> APN=
 > APN_USER=
 > APN_PASS=
 > APN_AUTH=
